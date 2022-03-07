@@ -38,9 +38,10 @@ PLAYBOOK_DIR="$HOME/scripts/mac-dev-playbook"
 
 if [ ! -d "$PLAYBOOK_DIR" ] ; then
     git clone git@github.com:dyatesupnorth/mac-dev-playbook.git "$PLAYBOOK_DIR"
-else
-    cd "$PLAYBOOK_DIR"
-    git pull git@github.com:dyatesupnorth/mac-dev-playbook.git
-    ansible-galaxy install -r requirements.yml
-    ansible-playbook main.yml --ask-become-pass
+    
 fi
+
+cd "$PLAYBOOK_DIR"
+git pull git@github.com:dyatesupnorth/mac-dev-playbook.git
+ansible-galaxy install -r requirements.yml
+ansible-playbook main.yml --ask-become-pass
