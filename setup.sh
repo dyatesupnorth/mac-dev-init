@@ -9,7 +9,7 @@ else
     xcode-select --install 
 fi
 
-# ssh-keygen -t -f rsa ~/.ssh/id_rsa
+ssh-keygen -t -f rsa ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
 cat <<EOF >&2
 
